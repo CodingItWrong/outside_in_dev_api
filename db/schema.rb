@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2021_03_24_104458) do
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
-    t.string "api_key", null: false
+    t.string "apiKey", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["api_key"], name: "index_applications_on_api_key", unique: true
+    t.index ["apiKey"], name: "index_applications_on_apiKey", unique: true
   end
 
   create_table "restaurants", force: :cascade do |t|

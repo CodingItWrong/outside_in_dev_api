@@ -20,7 +20,7 @@ class RestaurantsController < ApplicationController
   private
 
   def set_app
-    @app = ClientApp.find_by(api_key: params[:api_key])
+    @app = ClientApp.find_by(apiKey: params[:api_key])
     unless @app
       head :not_found
     end
