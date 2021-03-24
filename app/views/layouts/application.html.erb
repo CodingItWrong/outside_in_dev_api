@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OutsideInDevApi</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/prism.css" media="screen,projection" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content=""#00c853" />
+    <meta name="theme-color" content="#00c853" />
+
+    <title>Outside-In Development - API</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +22,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper green">
+        <div class="container">
+          <a href="{{ route('/') }}" class="brand-logo">Outside-In Development - API</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+
+    <script src="/materialize.min.js"></script>
+    <script src="/prism.js"></script>
   </body>
 </html>

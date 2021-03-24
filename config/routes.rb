@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'client_app#new'
+  post '/applications', to: 'client_app#create'
+  get '/:api_key/restaurants', to: 'restaurants#index'
+  post '/:api_key/restaurants', to: 'restaurants#create'
 end
