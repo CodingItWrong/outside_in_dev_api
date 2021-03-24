@@ -8,9 +8,26 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 
-group :development, :test do
+group :development do
+  gem 'bullet'
+  gem 'dotenv-rails'
+  gem 'listen', '~> 3.3'
 end
 
-group :development do
-  gem 'listen', '~> 3.3'
+group :development, :test do
+  gem 'coderay'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'rubocop'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_bot_rails'
+  gem 'rspec_junit_formatter'
+  gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'rack-attack'
 end
