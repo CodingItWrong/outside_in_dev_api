@@ -7,6 +7,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
+gem 'rack-cors'
 
 group :development do
   gem 'bullet'
