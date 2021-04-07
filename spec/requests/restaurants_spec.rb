@@ -17,4 +17,18 @@ RSpec.describe 'Restaurants', type: :request do
     expect(response_body[0]['name']).to eql('Pizza Place')
     expect(response_body[1]['name']).to eql('Salad Place')
   end
+
+  it 'allows creating a restaurant' do
+    headers = {'Content-Type' => 'application/json'}
+
+    name = 'Burger Place'
+    body = { name: name }
+
+    post "/#{api_key}/restaurants", headers: headers, params: body.to_json
+
+    expect(response.status).to eq(200)
+
+    response_body = JSON.parse(response.body)
+    expect(response_body['name']).to eql(name)
+  end
 end
