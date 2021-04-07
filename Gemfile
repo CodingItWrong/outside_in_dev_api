@@ -12,7 +12,7 @@ gem 'rack-cors'
 group :development do
   gem 'bullet'
   gem 'dotenv-rails'
-  gem 'listen', '~> 3.3'
+  gem 'listen', '~> 3.5'
 end
 
 group :development, :test do
