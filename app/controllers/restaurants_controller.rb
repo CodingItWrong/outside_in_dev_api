@@ -3,12 +3,12 @@ class RestaurantsController < ApplicationController
   before_action :set_app
 
   def index
-    sleep 1
+    sleep 1 unless Rails.env.test?
     render json: @app.restaurants.all
   end
 
   def create
-    sleep 1
+    sleep 1 unless Rails.env.test?
     @restaurant = @app.restaurants.create(restaurant_params)
     if @restaurant.save
       render json: @restaurant
