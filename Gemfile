@@ -8,6 +8,7 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.3'
 gem 'rack-cors'
+gem 'active_model_serializers'
 
 group :development do
   gem 'bullet'
