@@ -13,7 +13,7 @@ gem 'active_model_serializers'
 group :development do
   gem 'bullet'
   gem 'dotenv-rails'
-  gem 'listen', '~> 3.5'
+  gem 'listen', '~> 3.6'
 end
 
 group :development, :test do
