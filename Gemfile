@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '3.0.1'
+ruby '3.0.3'
 
 gem 'rails', '~> 6.1.4'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.5'
 gem 'sass-rails', '>= 6'
-gem 'webpacker', '~> 5.4'
 gem 'rack-cors'
 gem 'active_model_serializers'
 
