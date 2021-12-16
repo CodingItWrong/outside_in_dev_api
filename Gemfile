@@ -10,7 +10,6 @@ gem 'rack-cors'
 gem 'active_model_serializers'
 
 group :development do
-  gem 'bullet'
   gem 'dotenv-rails'
   gem 'listen', '~> 3.7'
 end

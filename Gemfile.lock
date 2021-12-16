@@ -69,9 +69,6 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
     builder (3.2.4)
-    bullet (6.1.5)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.11)
     capybara (3.36.0)
       addressable
       matrix
@@ -237,7 +234,6 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
-    uniform_notifier (1.14.2)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -252,7 +248,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  bullet
   capybara
   coderay
   dotenv-rails
