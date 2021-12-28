@@ -4,14 +4,14 @@ class RestaurantsController < ApplicationController
 
   def index
     sleep 1 unless Rails.env.test?
-    render json: @app.restaurants.all
+    render json: @app.restaurants.all.map(&:to_json)
   end
 
   def create
     sleep 1 unless Rails.env.test?
     @restaurant = @app.restaurants.create(restaurant_params)
     if @restaurant.save
-      render json: @restaurant
+      render json: @restaurant.to_json
     else
       render json: @restaurant.errors, status: :unprocessable_entity
     end
