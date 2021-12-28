@@ -11,6 +11,13 @@ RSpec.describe 'Restaurants', type: :request do
   def date_to_string(date) = date.iso8601(3)
 
   describe '#index' do
+    context 'with an invalid API key' do
+      it 'returns not found' do
+        get "/invalid_api_key/restaurants"
+        expect(response.status).to eq(404)
+      end
+    end
+
     context 'with a valid API key' do
       it 'returns all restaurants for that key' do
         get "/#{api_key}/restaurants"
@@ -38,13 +45,20 @@ RSpec.describe 'Restaurants', type: :request do
   end
 
   describe '#create' do
+    name = 'Burger Place'
+    body = { name: name }
+    headers = {'Content-Type' => 'application/json'}
+
+    context 'with an invalid API key' do
+      it 'returns not found' do
+        expect {
+          post "/invalid_api_key/restaurants", headers: headers, params: body.to_json
+        }.not_to(change {Restaurant.count})
+      end
+    end
+
     context 'with a valid API key' do
       it 'saves and returns the restaurant' do
-        headers = {'Content-Type' => 'application/json'}
-
-        name = 'Burger Place'
-        body = { name: name }
-
         expect {
           post "/#{api_key}/restaurants", headers: headers, params: body.to_json
         }.to change {Restaurant.count}.by(1)
