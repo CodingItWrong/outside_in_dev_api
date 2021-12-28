@@ -76,6 +76,20 @@ RSpec.describe 'Restaurants', type: :request do
           'updated_at' => date_to_string(restaurant.updated_at),
         )
       end
+
+      it 'rejects invalid input' do
+        invalid_body = {name: ''}
+        expect {
+          post "/#{api_key}/restaurants", headers: headers, params: invalid_body.to_json
+        }.not_to(change {Restaurant.count})
+
+        expect(response.status).to eq(422)
+
+        response_body = JSON.parse(response.body)
+        expect(response_body).to eq(
+          'name' => ["can't be blank"]
+        )
+      end
     end
   end
 end
