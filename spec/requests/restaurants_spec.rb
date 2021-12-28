@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Restaurants', type: :request do
   let(:api_key) { 'ABC123' }
   let!(:client_app) { ClientApp.create!(apiKey: api_key) }
+  let!(:other_client_app) { ClientApp.create!(apiKey: 'other_key') }
   let!(:restaurant1) { client_app.restaurants.create!(name: 'Pizza Place') }
   let!(:restaurant2) { client_app.restaurants.create!(name: 'Salad Place') }
+  let!(:other_restaurant) { other_client_app.restaurants.create!(name: 'Other Place') }
 
   def date_to_string(date) = date.iso8601(3)
 
