@@ -7,7 +7,6 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.5'
 gem 'sass-rails', '>= 6'
 gem 'rack-cors'
-gem 'active_model_serializers'
 
 group :development do
   gem 'dotenv-rails'
