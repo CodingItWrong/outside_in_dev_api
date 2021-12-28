@@ -3,15 +3,14 @@ require 'rails_helper'
 RSpec.describe 'Restaurants', type: :request do
   let(:api_key) { 'ABC123' }
   let!(:client_app) { ClientApp.create!(apiKey: api_key) }
+  let!(:restaurant1) { client_app.restaurants.create!(name: 'Pizza Place') }
+  let!(:restaurant2) { client_app.restaurants.create!(name: 'Salad Place') }
 
   def date_to_string(date) = date.iso8601(3)
 
   describe '#index' do
     context 'with a valid API key' do
       it 'returns all restaurants for that key' do
-        restaurant1 = client_app.restaurants.create!(name: 'Pizza Place')
-        restaurant2 = client_app.restaurants.create!(name: 'Salad Place')
-
         get "/#{api_key}/restaurants"
 
         expect(response.status).to eql(200)
