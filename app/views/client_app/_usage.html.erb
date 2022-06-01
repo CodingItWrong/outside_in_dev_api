@@ -10,7 +10,7 @@ In the URLs below, replace <code>YOUR-API-KEY</code> with the API key you create
 
 <pre><code class="language-js">import axios from 'axios';
 
-axios.get('https://outside-in-dev-api.herokuapp.com/YOUR-API-KEY/restaurants')
+axios.get('<%= server_domain %>/YOUR-API-KEY/restaurants')
   .then(response => console.log(response.data));</code></pre>
 
 Output:
@@ -33,7 +33,7 @@ Output:
 <pre><code class="language-js">import axios from 'axios';
 
 axios.post(
-  'https://outside-in-dev-api.herokuapp.com/YOUR-API-KEY/restaurants',
+  '<%= server_domain %>/YOUR-API-KEY/restaurants',
   { name: 'Sushi Place' },
 )
   .then(response => console.log(response.data));</code></pre>
