@@ -30,14 +30,10 @@ RSpec.describe 'Restaurants', type: :request do
           {
             'id' => restaurant1.id,
             'name' => restaurant1.name,
-            'created_at' => date_to_string(restaurant1.created_at),
-            'updated_at' => date_to_string(restaurant1.updated_at),
           },
           {
             'id' => restaurant2.id,
             'name' => restaurant2.name,
-            'created_at' => date_to_string(restaurant2.created_at),
-            'updated_at' => date_to_string(restaurant2.updated_at),
           },
         ])
       end
@@ -72,8 +68,6 @@ RSpec.describe 'Restaurants', type: :request do
         expect(response_body).to eq(
           'id' => restaurant.id,
           'name' => name,
-          'created_at' => date_to_string(restaurant.created_at),
-          'updated_at' => date_to_string(restaurant.updated_at),
         )
       end
 
