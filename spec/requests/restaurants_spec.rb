@@ -86,4 +86,27 @@ RSpec.describe 'Restaurants', type: :request do
       end
     end
   end
+
+  describe '#destroy' do
+    let!(:restaurant) { FactoryBot.create(:restaurant) }
+
+    context 'with an invalid API key' do
+      it 'returns not found' do
+        expect {
+          delete "/invalid_api_key/restaurants/#{restaurant.id}", headers: headers
+        }.not_to(change {Restaurant.count})
+      end
+    end
+
+    context 'with a valid API key' do
+      it 'deletes the restaurant' do
+        expect {
+          delete "/#{restaurant.application.apiKey}/restaurants/#{restaurant.id}", headers: headers
+        }.to change {Restaurant.count}.by(-1)
+
+        expect(response.status).to eq(204)
+        expect(response.body).to eq('')
+      end
+    end
+  end
 end
