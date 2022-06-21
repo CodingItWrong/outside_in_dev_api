@@ -17,6 +17,13 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def destroy
+    sleep 1 unless Rails.env.test?
+    @restaurant = @app.restaurants.find(params[:id])
+    @restaurant.destroy!
+    head :no_content
+  end
+
   private
 
   def set_app
