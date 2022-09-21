@@ -13,7 +13,7 @@ RSpec.describe 'Restaurants', type: :request do
   describe '#index' do
     context 'with an invalid API key' do
       it 'returns not found' do
-        get "/invalid_api_key/restaurants"
+        get '/invalid_api_key/restaurants'
         expect(response.status).to eq(404)
       end
     end
@@ -27,37 +27,37 @@ RSpec.describe 'Restaurants', type: :request do
         response_body = JSON.parse(response.body)
 
         expect(response_body).to eq([
-          {
-            'id' => restaurant1.id,
-            'name' => restaurant1.name,
-          },
-          {
-            'id' => restaurant2.id,
-            'name' => restaurant2.name,
-          },
-        ])
+                                      {
+                                        'id' => restaurant1.id,
+                                        'name' => restaurant1.name
+                                      },
+                                      {
+                                        'id' => restaurant2.id,
+                                        'name' => restaurant2.name
+                                      }
+                                    ])
       end
     end
   end
 
   describe '#create' do
     name = 'Burger Place'
-    body = { name: name }
-    headers = {'Content-Type' => 'application/json'}
+    body = { name: }
+    headers = { 'Content-Type' => 'application/json' }
 
     context 'with an invalid API key' do
       it 'returns not found' do
         expect {
-          post "/invalid_api_key/restaurants", headers: headers, params: body.to_json
-        }.not_to(change {Restaurant.count})
+          post '/invalid_api_key/restaurants', headers:, params: body.to_json
+        }.not_to(change { Restaurant.count })
       end
     end
 
     context 'with a valid API key' do
       it 'saves and returns the restaurant' do
         expect {
-          post "/#{api_key}/restaurants", headers: headers, params: body.to_json
-        }.to change {Restaurant.count}.by(1)
+          post "/#{api_key}/restaurants", headers:, params: body.to_json
+        }.to change { Restaurant.count }.by(1)
 
         restaurant = Restaurant.last
         expect(restaurant.name).to eq(name)
@@ -67,15 +67,15 @@ RSpec.describe 'Restaurants', type: :request do
         response_body = JSON.parse(response.body)
         expect(response_body).to eq(
           'id' => restaurant.id,
-          'name' => name,
+          'name' => name
         )
       end
 
       it 'rejects invalid input' do
-        invalid_body = {name: ''}
+        invalid_body = { name: '' }
         expect {
-          post "/#{api_key}/restaurants", headers: headers, params: invalid_body.to_json
-        }.not_to(change {Restaurant.count})
+          post "/#{api_key}/restaurants", headers:, params: invalid_body.to_json
+        }.not_to(change { Restaurant.count })
 
         expect(response.status).to eq(422)
 
@@ -93,16 +93,16 @@ RSpec.describe 'Restaurants', type: :request do
     context 'with an invalid API key' do
       it 'returns not found' do
         expect {
-          delete "/invalid_api_key/restaurants/#{restaurant.id}", headers: headers
-        }.not_to(change {Restaurant.count})
+          delete "/invalid_api_key/restaurants/#{restaurant.id}", headers:
+        }.not_to(change { Restaurant.count })
       end
     end
 
     context 'with a valid API key' do
       it 'deletes the restaurant' do
         expect {
-          delete "/#{restaurant.application.apiKey}/restaurants/#{restaurant.id}", headers: headers
-        }.to change {Restaurant.count}.by(-1)
+          delete "/#{restaurant.application.apiKey}/restaurants/#{restaurant.id}", headers:
+        }.to change { Restaurant.count }.by(-1)
 
         expect(response.status).to eq(204)
         expect(response.body).to eq('')

@@ -5,8 +5,8 @@ class Restaurant < ApplicationRecord
 
   def to_json(*_args)
     {
-      id: id,
-      name: name,
+      id:,
+      name:
     }
   end
 
