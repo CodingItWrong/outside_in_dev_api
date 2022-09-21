@@ -8,7 +8,7 @@ class ClientApp < ApplicationRecord
   def create_sample_data!
     restaurants.create([
                          { name: 'Pasta Place' },
-                         { name: 'Salad Place' }
+                         { name: 'Salad Place' },
                        ])
   end
 end

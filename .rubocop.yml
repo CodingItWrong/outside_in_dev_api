@@ -14,3 +14,9 @@ AllCops:
 
 Style/Documentation:
   Enabled: false # Don't require a class comment
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
