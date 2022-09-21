@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 3.1
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'config.ru'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'spec/*_helper.rb'
+    - 'vendor/**/*'
+  NewCops: enable
