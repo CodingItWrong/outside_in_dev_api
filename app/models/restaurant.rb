@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Restaurant < ApplicationRecord
   belongs_to :application, class_name: 'ClientApp'
 
@@ -5,8 +7,8 @@ class Restaurant < ApplicationRecord
 
   def to_json(*_args)
     {
-      id: id,
-      name: name,
+      id:,
+      name:
     }
   end
 

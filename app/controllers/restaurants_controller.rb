@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RestaurantsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_app
@@ -28,9 +30,7 @@ class RestaurantsController < ApplicationController
 
   def set_app
     @app = ClientApp.find_by(apiKey: params[:api_key])
-    unless @app
-      head :not_found
-    end
+    head :not_found unless @app
   end
 
   def restaurant_params
