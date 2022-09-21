@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClientApp < ApplicationRecord
   self.table_name = 'applications'
 

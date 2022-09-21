@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClientAppController < ApplicationController
   def create
     api_key = SecureRandom.alphanumeric(32)

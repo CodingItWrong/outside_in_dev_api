@@ -11,3 +11,6 @@ AllCops:
     - 'spec/*_helper.rb'
     - 'vendor/**/*'
   NewCops: enable
+
+Style/Documentation:
+  Enabled: false # Don't require a class comment
