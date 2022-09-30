@@ -11,5 +11,9 @@ class ClientApp < ApplicationRecord
                          { name: 'Pasta Place' },
                          { name: 'Salad Place' },
                        ])
+    movies.create([
+                    { title: 'Space Wars' },
+                    { title: 'Cowboy Wars' },
+                  ])
   end
 end
