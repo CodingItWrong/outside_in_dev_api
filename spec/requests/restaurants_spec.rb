@@ -36,7 +36,7 @@ RSpec.describe 'Restaurants', type: :request do
                                       {
                                         'id' => restaurant2.id,
                                         'name' => restaurant2.name
-                                      }
+                                      },
                                     ])
       end
     end
@@ -69,7 +69,7 @@ RSpec.describe 'Restaurants', type: :request do
         response_body = JSON.parse(response.body)
         expect(response_body).to eq(
           'id' => restaurant.id,
-          'name' => name
+          'name' => name,
         )
       end
 
@@ -83,7 +83,7 @@ RSpec.describe 'Restaurants', type: :request do
 
         response_body = JSON.parse(response.body)
         expect(response_body).to eq(
-          'name' => ["can't be blank"]
+          'name' => ["can't be blank"],
         )
       end
     end
