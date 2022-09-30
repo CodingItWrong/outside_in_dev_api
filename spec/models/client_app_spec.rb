@@ -11,5 +11,11 @@ describe ClientApp do
         client_app.create_sample_data!
       }.to change { client_app.restaurants.count }.by(2)
     end
+
+    it 'creates some sample movies' do
+      expect {
+        client_app.create_sample_data!
+      }.to change { client_app.movies.count }.by(2)
+    end
   end
 end
