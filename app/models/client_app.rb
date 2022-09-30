@@ -12,8 +12,8 @@ class ClientApp < ApplicationRecord
                          { name: 'Salad Place' },
                        ])
     movies.create([
-                    { title: 'Space Wars' },
-                    { title: 'Cowboy Wars' },
+                    { title: 'Space Wars', created_at: 2.days.ago },
+                    { title: 'Cowboy Wars', created_at: 2.days.ago },
                   ])
   end
 end
