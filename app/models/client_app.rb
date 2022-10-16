@@ -15,8 +15,8 @@ class ClientApp < ApplicationRecord
     )
     movies.create(
       [
-        { title: 'Space Wars', created_at: 2.days.ago },
-        { title: 'Cowboy Wars', created_at: 2.days.ago },
+        { title: 'Vertigo', created_at: 2.days.ago },
+        { title: 'The Sound of Music', created_at: 2.days.ago },
       ],
     )
   end
