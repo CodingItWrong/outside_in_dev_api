@@ -16,7 +16,7 @@ end
 group :development, :test do
   gem 'coderay'
   gem 'rspec-rails'
-  gem 'rubocop'
+  gem 'standard'
 end
 
 group :test do
