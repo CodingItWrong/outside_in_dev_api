@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Movie < ApplicationRecord
-  belongs_to :application, class_name: 'ClientApp'
+  belongs_to :application, class_name: "ClientApp"
 
   validates :title, presence: true
 
@@ -9,7 +9,7 @@ class Movie < ApplicationRecord
     {
       id:,
       title:,
-      addedToday: added_today,
+      addedToday: added_today
     }
   end
 

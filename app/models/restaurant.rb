@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Restaurant < ApplicationRecord
-  belongs_to :application, class_name: 'ClientApp'
+  belongs_to :application, class_name: "ClientApp"
 
   validates :name, presence: true
 
