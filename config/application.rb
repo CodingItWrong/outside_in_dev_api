@@ -34,7 +34,5 @@ module OutsideInDevApi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    config.active_record.legacy_connection_handling = false
   end
 end
