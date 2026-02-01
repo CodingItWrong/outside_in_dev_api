@@ -4,7 +4,7 @@ ruby file: ".ruby-version"
 
 gem "rails", "~> 8.1.1"
 gem "pg", "~> 1.6"
-gem "puma", "~> 7.1"
+gem "puma", "~> 7.2"
 gem "sass-rails", ">= 6"
 gem "rack-cors"
 
