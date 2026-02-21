@@ -318,6 +318,7 @@ GEM
 PLATFORMS
   arm64-darwin-22
   arm64-darwin-24
+  arm64-darwin-25
   x86_64-linux
 
 DEPENDENCIES
@@ -337,7 +338,7 @@ DEPENDENCIES
   standard
 
 RUBY VERSION
-   ruby 3.4.3p32
+   ruby 4.0.1p0
 
 BUNDLED WITH
-   2.6.8
+   4.0.6
