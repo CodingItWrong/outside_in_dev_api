@@ -7,6 +7,8 @@ gem "pg", "~> 1.7"
 gem "puma", "~> 8.0"
 gem "sass-rails", ">= 6"
 gem "rack-cors"
+# json 3.x removed the create_additions option that Sprockets 4.2 still passes; remove once Sprockets supports json 3
+gem "json", "~> 2.21"
 
 group :development do
   gem "dotenv-rails"
